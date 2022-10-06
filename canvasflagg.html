@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="utf-8">
+        <title>Fransk flagg</title>
+        <style>
+            body {
+                padding-left: 0;
+                padding-right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                width: 300px;
+                height: 200px;
+                }  
+
+            canvas {
+                border-style: solid;
+            }
+        </style>   
+    </head>
+    <body>
+        <canvas id="france" width="300" height="200">
+        </canvas>
+        <script>
+            var france = document.getElementById("france");
+            var fctx = france.getContext("2d");
+            france.width = 300;
+            france.height = 200;
+            drawRect(fctx, 0, 0, france.width / 3, france.height, "#EF4135");
+            drawRect(fctx, france.width * 2 / 3, 0, france.width, france.height, "#0055A4");
+
+            function drawLine(ctx, startX, startY, endX, endY, color, lineWidth) {
+            ctx.beginPath();
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(endX, endY);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = lineWidth;
+            ctx.stroke();
+            }
+
+            // Function to draw a rectangle
+            function drawRect(ctx, startX, startY, width, height, color) {
+            ctx.beginPath();
+            ctx.rect(startX, startY, width, height);
+            ctx.strokeStyle = color;
+            ctx.fillStyle = color;
+            ctx.lineWidth = 1;
+            ctx.fill();
+            ctx.stroke();
+}
+         </script>
+
+    </body>
+</html>
